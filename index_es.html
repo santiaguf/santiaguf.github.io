@@ -34,7 +34,7 @@
 						generalmente hago software, <a href="https://platzi.com/teachers/santiaguf/">Enseño</a>, realizo traducciones, Doy charlas en conferencias y hago otras cosas.
 						Manejo una empresa de hosting: <a href="https://aumentada.net" target="_blank">Aumentada</a>.<br />
 						También apoyo <a href="https://pereirajs.org/" target="_blank">PereiraJS</a> , <a href="https://pereiratechtalks.com/" target="_blank">PereiraTechTalks</a> y <a href="https://barcamp.se/" target="_blank">Barcamp Security Edition</a>, Que son comunidades de desarrollo web, software y seguridad informática</p>
-<p></p>
+						<br>
 						<ul class="icons">
 							<li><a href="https://linkedin.com/in/santiaguf" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
 							<li><a href="https://github.com/santiaguf" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
@@ -48,38 +48,35 @@
 							<li><a href="https://stackoverflow.com/users/3431415/santiago-bernal" target="_blank" class="icon brands alt fa-stack-overflow"><span class="label">StackOverflow</span></a></li>
                             <li><a href="https://goodreads.com/santiaguf" target="_blank" class="icon brands alt fa-goodreads"><span class="label">Good reads</span></a></li>
                             <li><a href="https://trakt.tv/users/santiaguf" target="_blank" class="icon brands alt fa-tumblr-square"><span class="label">Trakt.tv</span></a></li>
-
 						</ul>
-
-					<ul class="actions special">
-						<li><a href="#soft-eng" class="button scrolly">Intro</a></li>
-						<li><a href="#teacher" class="button scrolly">Docencia</a></li>
-						<li><a href="#project" class="button scrolly">Proyectos</a></li>
-						<li><a href="#translator" class="button scrolly">Traducciones</a></li>
-						<li><a href="#speaker" class="button scrolly">Charlas</a></li>
-					</ul>
 				</div>
 			</section>
 
 		<!-- One -->
-
 			<section id="one" class="main style1">
 				<div class="container">
 					<section>
+						<ul class="actions">
+							<li><a href="#soft-eng" class="button scrolly" onclick="showTab('soft-eng')">Intro</a></li>
+							<li><a href="#teacher" class="button scrolly" onclick="showTab('teacher')">Docencia</a></li>
+							<li><a href="#project" class="button scrolly" onclick="showTab('project')">Proyectos</a></li>
+							<li><a href="#translator" class="button scrolly" onclick="showTab('translator')">Traducciones</a></li>
+							<li><a href="#speaker" class="button scrolly" onclick="showTab('speaker')">Charlas</a></li>
+						</ul>
 						<header class="major special">
 							<h2>Experiencia</h2>
                         </header>
-                        <div id="soft-eng">
+                        <div id="soft-eng" class="tabcontent">
                             <h3>👨‍💻 Ingeniero de software</h3>
                             <p><span class="image left"><img src="images/santiaguf.png" alt="" /></span>Desde el 2007 trabajo en la industria TI, empecé en soporte técnica, fui webmaster (recuerdas ese puesto?) de algunos sitios web y manejando servidores linux. Después entré al desarrolo web, he desarrollado sitios y aplicaciones web usando Stacks como LAMP (Linux, Apache, Mysql and Php), JOTL (Java, Oracle DB, Tomcat and Linux) y ahora empezando con MERN (Mongo, Express, React and NodeJS), tengo otros conocimietnos en SysAdmin, Seguridad informática, SEO, Analíticas de sitios web, Creación de contenido web y otros campos en tecnología. En mi tiempo libre hago trabajos Freelance en <a href="https://www.upwork.com/freelancers/~016207409bccb57815" target="_blank">Upwork</a> </p>
                         </div>
 
-                        <div id="teacher">
+                        <div id="teacher" class="tabcontent">
                             <h3>👨‍🏫 Profesor</h3>
                             <p><span class="image left"><img src="images/board.png" alt="" /></span>Uno de mis objetivos de vida es compartir mi conocimiento con los demás, desde 2015 soy profesor en colegios y universidades en Pereira, y también enseño en mi <a href="https://www.youtube.com/channel/UC9nMOskdKd2eyniQ-Xq3MUQ/videos" target="_blank">canal de Youtube</a> y en <a href="https://platzi.com/teachers/santiaguf/" target="_blank">Platzi</a> (Puedes ver más en <a href="https://www.linkedin.com/in/santiaguf/" target="_blank">Linkedin</a>). Los temas que enseño en clase: Algoritmos, programación básica (estructurada), Programación orientada a objetos, Bases de datos, Seguridad informatica, Diseño y desarrollo web, Desarrollo frontend, Desarrollo backend, Ingeniería de Software.</p>
                         </div>
 
-                        <div id="project">
+                        <div id="project" class="tabcontent">
                             <h3>👨‍💻 Proyectos personales</h3>
                             <p>Algunos Proyectos, Algunos con su código en GitHub/Gitlab.
                             </p>
@@ -153,7 +150,7 @@
                             </div>
                         </div>
 
-                        <div id="translator">
+                        <div id="translator" class="tabcontent">
                             <h3>📖 Traductor y contribuidor</h3>
                             <p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>también disfruto cuando ayudo comunidades or projectos con constribuciones (como <a href="https://www.google.com/maps/contrib/110720400365410405960/" target="_blank">Guía Local</a> en Google Maps) y traducciones (De inglés a español).
                             </p>
@@ -191,7 +188,7 @@
                             </div>
                         </div>
 
-                        <div id="speaker">
+                        <div id="speaker" class="tabcontent">
 							<h3>🗣️ Speaker</h3>
 							<p>Charlas en eventos y conferencias.
 							</p>
@@ -302,6 +299,21 @@
 
 		<!-- Get Current Year -->
 			<script type="text/javascript">
+
+				function showTab(tab){
+					hideAllTabs()
+					document.getElementById(tab).style.display = "";
+				}
+
+				function hideAllTabs(){
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+				}
+
+				hideAllTabs();
+
 				document.getElementById("year").innerHTML = new Date().getFullYear();
 			</script>
 	</body>

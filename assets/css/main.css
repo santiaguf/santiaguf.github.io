@@ -2446,6 +2446,7 @@ input, select, textarea {
 		list-style: none;
 		margin-left: -1em;
 		padding-left: 0;
+		flex-flow: row wrap;
 	}
 
 		ul.actions li {

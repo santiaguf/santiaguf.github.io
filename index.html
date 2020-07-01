@@ -34,7 +34,7 @@
 						Usually I Develop Software, <a href="https://platzi.com/teachers/santiaguf/">Teach</a>, Translate content, Speak in conferences and do other stuffs.
 						I run a hosting company: <a href="https://aumentada.net" target="_blank">Aumentada.</a>.<br />
 						I Also support <a href="https://pereirajs.org/" target="_blank">PereiraJS</a> , <a href="https://pereiratechtalks.com/" target="_blank">PereiraTechTalks</a> and <a href="https://barcamp.se/" target="_blank">Barcamp Security Edition</a>, that are communities of web development, software and infoSec</p>
-<p></p>
+						<br>
 						<ul class="icons">
 							<li><a href="https://linkedin.com/in/santiaguf" target="_blank" class="icon brands alt fa-linkedin"><span class="label">Linkedin</span></a></li>
 							<li><a href="https://github.com/santiaguf" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
@@ -48,38 +48,32 @@
 							<li><a href="https://stackoverflow.com/users/3431415/santiago-bernal" target="_blank" class="icon brands alt fa-stack-overflow"><span class="label">StackOverflow</span></a></li>
 							<li><a href="https://goodreads.com/santiaguf" target="_blank" class="icon brands alt fa-goodreads"><span class="label">Good reads</span></a></li>
 							<li><a href="https://trakt.tv/users/santiaguf" target="_blank" class="icon brands alt fa-tumblr-square"><span class="label">Trakt.tv</span></a></li>
-
 						</ul>
-
-					<ul class="actions special">
-						<li><a href="#soft-eng" class="button scrolly">About me</a></li>
-						<li><a href="#teacher" class="button scrolly">Teacher</a></li>
-						<li><a href="#project" class="button scrolly">Projects</a></li>
-						<li><a href="#translator" class="button scrolly">Translations</a></li>
-						<li><a href="#speaker" class="button scrolly">Talks</a></li>
-					</ul>
 				</div>
 			</section>
 
 		<!-- One -->
-
 			<section id="one" class="main style1">
 				<div class="container">
 					<section>
-						<header class="major special">
-							<h2>About me</h2>
-						</header>
-						<div id="soft-eng">
+						<ul class="actions">
+							<li><a href="#soft-eng" class="button scrolly" onclick="showTab('soft-eng')">About me</a></li>
+							<li><a href="#teacher" class="button scrolly" onclick="showTab('teacher')">Teacher</a></li>
+							<li><a href="#project" class="button scrolly" onclick="showTab('project')">Projects</a></li>
+							<li><a href="#translator" class="button scrolly" onclick="showTab('translator')">Translations</a></li>
+							<li><a href="#speaker" class="button scrolly" onclick="showTab('speaker')">Talks</a></li>
+						</ul>
+						<div id="soft-eng" class="tabcontent">
 							<h3>👨‍💻 Software Engineering</h3>
 							<p><span class="image left"><img src="images/santiaguf.png" alt="" /></span>Since 2007 i am working on IT industry, i started with technical support, webmaster (remember that word?) of some websites and managing linux servers. Then i went to web development, i've developed websites and apps using Stacks as LAMP (Linux, Apache, Mysql and Php), JOTL (Java, Oracle DB, Tomcat and Linux) And starting with MERN (Mongo, Express, React and NodeJS), i have background in SysAdmin, InfoSec, SEO, Analytics, Web Content and other fields in tech. in my free time i do Freelancing Jobs at<a href="https://www.upwork.com/freelancers/~016207409bccb57815" target="_blank">Upwork</a> </p>
 						</div>
 
-						<div id="teacher">
+						<div id="teacher" class="tabcontent">
 							<h3>👨‍🏫 Teacher</h3>
 							<p><span class="image left"><img src="images/board.png" alt="" /></span>One of my life purposes is to share my knowledge with others, since 2015 i am teacher in colleges and universities in Pereira, and Teach in my <a href="https://www.youtube.com/channel/UC9nMOskdKd2eyniQ-Xq3MUQ/videos" target="_blank">Youtube channel</a> and <a href="https://platzi.com/teachers/santiaguf/" target="_blank">Platzi</a> (you can see more in <a href="https://www.linkedin.com/in/santiaguf/" target="_blank">Linkedin</a>). the Topics i Cover in class: Algorithms, Basic programming, Oriented Object programming, Databases, information security, web design, Frontend development, Backend development, Software Engineering.</p>
 						</div>
 
-						<div id="project">
+						<div id="project" class="tabcontent">
                             <h3>👨‍💻 Side Projects</h3>
                             <p>Some projects, some of them with code in Github/Gitlab.
                             </p>
@@ -153,7 +147,7 @@
                             </div>
 						</div>
 
-						<div id="translator">
+						<div id="translator" class="tabcontent">
 							<h3>📖 Translator and Contributor</h3>
 							<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>I also enjoy when i help community or projects with Contributions (as <a href="https://www.google.com/maps/contrib/110720400365410405960/" target="_blank">Local Guide</a> in Google Maps) and translations (from English to Spanish).
 							</p>
@@ -192,7 +186,7 @@
 							</div>
 						</div>
 
-						<div id="speaker">
+						<div id="speaker" class="tabcontent">
 							<h3>🗣️ Speaker</h3>
 							<p>Talks in events and conferences.
 							</p>
@@ -304,6 +298,21 @@
 
 		<!-- Get Current Year -->
 			<script type="text/javascript">
+
+				function showTab(tab){
+					hideAllTabs()
+					document.getElementById(tab).style.display = "";
+				}
+
+				function hideAllTabs(){
+					tabcontent = document.getElementsByClassName("tabcontent");
+					for (i = 0; i < tabcontent.length; i++) {
+						tabcontent[i].style.display = "none";
+					}
+				}
+
+				hideAllTabs();
+
 				document.getElementById("year").innerHTML = new Date().getFullYear();
 			</script>
 	</body>
