@@ -62,6 +62,7 @@
 							<li><a href="#project" class="button scrolly" onclick="showTab('project')">Projects</a></li>
 							<li><a href="#translator" class="button scrolly" onclick="showTab('translator')">Translations</a></li>
 							<li><a href="#speaker" class="button scrolly" onclick="showTab('speaker')">Talks</a></li>
+							<li><a href="#blogger" class="button scrolly" onclick="showTab('blogger')">Posts</a></li>
 						</ul>
 						<div id="soft-eng" class="tabcontent">
 							<h3>👨‍💻 Software Engineering</h3>
@@ -166,7 +167,7 @@
 									<tbody>
 										<tr>
 											<td>Twitter</td>
-											<td>I help with <a href="https://translate.twitter.com/" target="_blank">Twitter translation</a> in 2009</td>
+											<td>I helped with <a href="https://translate.twitter.com/" target="_blank">Twitter translation</a> in 2009</td>
 										</tr>
 										<tr>
 											<td><a href="https://martinfowler.com/bliki/TechnicalDebt.html" target="_blank">Technical debt</a> article by Martin Fowler</td>
@@ -280,6 +281,15 @@
 								</table>
 							</div>
 						</div>
+
+						<div id="blogger" class="tabcontent">
+							<h3>📖 Posts on Medium</h3>
+							<div class="table-wrapper">
+								<div class="blog__slider">
+								</div>
+
+							</div>
+						</div>
 					</section>
 
 				</div>
@@ -315,7 +325,47 @@
 					}
 				}
 
+				function getMediumPosts(){
+					fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@santiaguf')
+					.then((res) => res.json())
+					.then((data) => {
+						// Fillter the array
+						const res = data.items //This is an array with the content. No feed, no info about author etc..
+						const posts = res.filter(item => item.categories.length > 0) // That's the main trick* !
+
+						function toText(node) {
+							let tag = document.createElement('div')
+							tag.innerHTML = node
+							node = tag.innerText
+							return node
+						}
+
+						function shortenText(text,startingPoint ,maxLength) {
+						return text.length > maxLength?
+							text.slice(startingPoint, maxLength):
+							text
+						}
+
+						let output = '';
+						posts.forEach((item) => {
+							output += `
+								<a href="${item.link}">
+								<div class="blog__content">
+									<div class="blog_preview">
+										<h2 class="blog__title">${item.title+' - '+shortenText(item.pubDate,0 ,10)}</h2>
+										<img src="${item.thumbnail}" class="blog__topImg"></img>
+										<p class="blog__intro">${shortenText(toText(item.content),0, 300)+ '...'}</p>
+									</div>
+									<hr>
+								</div>
+								<a/>`
+						})
+						document.querySelector('.blog__slider').innerHTML = output
+						});
+				}
+
 				hideAllTabs();
+				getMediumPosts();
 
 				document.getElementById("year").innerHTML = new Date().getFullYear();
 			</script>

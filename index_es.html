@@ -62,10 +62,8 @@
 							<li><a href="#project" class="button scrolly" onclick="showTab('project')">Proyectos</a></li>
 							<li><a href="#translator" class="button scrolly" onclick="showTab('translator')">Traducciones</a></li>
 							<li><a href="#speaker" class="button scrolly" onclick="showTab('speaker')">Charlas</a></li>
+							<li><a href="#blogger" class="button scrolly" onclick="showTab('blogger')">Art&iacute;culos</a></li>
 						</ul>
-						<header class="major special">
-							<h2>Experiencia</h2>
-                        </header>
                         <div id="soft-eng" class="tabcontent">
                             <h3>👨‍💻 Ingeniero de software</h3>
                             <p><span class="image left"><img src="images/santiaguf.png" alt="" /></span>Desde el 2007 trabajo en la industria TI, empecé en soporte técnica, fui webmaster (recuerdas ese puesto?) de algunos sitios web y manejando servidores linux. Después entré al desarrolo web, he desarrollado sitios y aplicaciones web usando Stacks como LAMP (Linux, Apache, Mysql and Php), JOTL (Java, Oracle DB, Tomcat and Linux) y ahora empezando con MERN (Mongo, Express, React and NodeJS), tengo otros conocimietnos en SysAdmin, Seguridad informática, SEO, Analíticas de sitios web, Creación de contenido web y otros campos en tecnología. En mi tiempo libre hago trabajos Freelance en <a href="https://www.upwork.com/freelancers/~016207409bccb57815" target="_blank">Upwork</a> </p>
@@ -280,7 +278,16 @@
 									</tbody>
 								</table>
 							</div>
-                        </div>
+						</div>
+
+						<div id="blogger" class="tabcontent">
+							<h3>📖 Art&iacute;culos en Medium</h3>
+							<div class="table-wrapper">
+								<div class="blog__slider">
+								</div>
+
+							</div>
+						</div>
 					</section>
 
 				</div>
@@ -316,7 +323,48 @@
 					}
 				}
 
+				function getMediumPosts(){
+					fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@santiaguf')
+					.then((res) => res.json())
+					.then((data) => {
+						// Fillter the array
+						const res = data.items //This is an array with the content. No feed, no info about author etc..
+						const posts = res.filter(item => item.categories.length > 0) // That's the main trick* !
+
+						function toText(node) {
+							let tag = document.createElement('div')
+							tag.innerHTML = node
+							node = tag.innerText
+							return node
+						}
+
+						function shortenText(text,startingPoint ,maxLength) {
+						return text.length > maxLength?
+							text.slice(startingPoint, maxLength):
+							text
+						}
+
+						let output = '';
+						posts.forEach((item) => {
+							output += `
+								<a href="${item.link}">
+								<div class="blog__content">
+									<div class="blog_preview">
+										<h2 class="blog__title">${item.title+' - '+shortenText(item.pubDate,0 ,10)}</h2>
+										<img src="${item.thumbnail}" class="blog__topImg"></img>
+										<p class="blog__intro">${shortenText(toText(item.content),0, 300)+ '...'}</p>
+									</div>
+									<hr>
+								</div>
+								<a/>`
+						})
+						document.querySelector('.blog__slider').innerHTML = output
+						});
+				}
+
+
 				hideAllTabs();
+				getMediumPosts();
 
 				document.getElementById("year").innerHTML = new Date().getFullYear();
 			</script>
