@@ -1,17 +1,16 @@
-function hideAllTabs() {
+const hideAllTabs = () => {
   const tabcontent = document.getElementsByClassName('tabcontent');
   for (let i = 0; i < tabcontent.length; i += 1) {
     tabcontent[i].style.display = 'none';
   }
-}
+};
 
-// eslint-disable-next-line no-unused-vars
-function showTab(tab) {
+const showTab = (tab) => {
   hideAllTabs();
   document.getElementById(tab).style.display = '';
-}
+};
 
-function getMediumPosts() {
+const getMediumPosts = () => {
   const apiUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@santiaguf';
   fetch(apiUrl)
     .then((res) => res.json())
@@ -50,9 +49,39 @@ function getMediumPosts() {
       });
       document.querySelector('.blog__slider').innerHTML = output;
     });
-}
+};
 
 hideAllTabs();
 getMediumPosts();
 
 document.getElementById('year').innerHTML = new Date().getFullYear();
+
+const softEngBtn = document.getElementById('soft-eng-btn');
+softEngBtn.addEventListener('click', () => {
+  showTab('soft-eng');
+});
+
+const teacherBtn = document.getElementById('teacher-btn');
+teacherBtn.addEventListener('click', () => {
+  showTab('teacher');
+});
+
+const projectBtn = document.getElementById('project-btn');
+projectBtn.addEventListener('click', () => {
+  showTab('project');
+});
+
+const translatorBtn = document.getElementById('translator-btn');
+translatorBtn.addEventListener('click', () => {
+  showTab('translator');
+});
+
+const speakerBtn = document.getElementById('speaker-btn');
+speakerBtn.addEventListener('click', () => {
+  showTab('speaker');
+});
+
+const bloggerBtn = document.getElementById('blogger-btn');
+bloggerBtn.addEventListener('click', () => {
+  showTab('blogger');
+});
