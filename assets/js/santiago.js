@@ -1,3 +1,4 @@
+let count = 0;
 
 const hideAllTabs = () => {
   const tabcontent = document.getElementsByClassName('tabcontent');
@@ -84,5 +85,8 @@ speakerBtn.addEventListener('click', () => {
 const bloggerBtn = document.getElementById('blogger-btn');
 bloggerBtn.addEventListener('click', () => {
   showTab('blogger');
-  getMediumPosts();
+  if(count == 0){
+    getMediumPosts();
+    count += 1;
+  }
 });
