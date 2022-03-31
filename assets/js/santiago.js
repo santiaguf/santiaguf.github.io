@@ -1,3 +1,4 @@
+
 const hideAllTabs = () => {
   const tabcontent = document.getElementsByClassName('tabcontent');
   for (let i = 0; i < tabcontent.length; i += 1) {
@@ -52,7 +53,6 @@ const getMediumPosts = () => {
 };
 
 hideAllTabs();
-getMediumPosts();
 
 document.getElementById('year').innerHTML = new Date().getFullYear();
 
@@ -84,4 +84,5 @@ speakerBtn.addEventListener('click', () => {
 const bloggerBtn = document.getElementById('blogger-btn');
 bloggerBtn.addEventListener('click', () => {
   showTab('blogger');
+  getMediumPosts();
 });
