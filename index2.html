@@ -1,11 +1,18 @@
 <!DOCTYPE html> 
 <html>
 	<head>
-		<title>Pure CSS3 Tabs</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <title>Santiago Bernal - Software Engineer</title>
+        <!--<meta http-equiv="refresh" content="4">-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Santiago bernal website">
+        <meta name="theme-color" content="#fff"/>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon//favicon-16x16.png">
+	<link rel='manifest' href='manifest.json'>
 	</head>
 	<body>
 
@@ -35,7 +42,7 @@
 				<label for="tab5"><i class="fa fa-microphone"></i>Talks</label>
 
 				<input type="radio" name="pcss3t" id="tab6" class="tab-content-last">
-				<label for="tab6"><i class="fa fa-book"></i>Posts</label>
+				<label for="tab6" id="tab6-label"><i class="fa fa-book"></i>Posts</label>
 
 				<ul>
 					<li class="tab-content tab-content-first typography">
@@ -308,12 +315,45 @@
 					<li class="tab-content tab-content-last typography">
 						<div class="typography">
 							<h2>📖 Posts on Medium</h2>
-							<p>.</p>
+                            <div class="table-wrapper">
+                                <div class="blog__slider">
+                                </div>
+                            </div>
 						</div>
 					</li>
 				</ul>
 			</div>
 			<!--/ tabs -->
 		</div>
+
+        <!-- Footer -->
+        <section id="footer">
+                <p>&copy; <span id="year"></span> - Santiago Bernal</p>
+        </section>
 	</body>
+
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <script defer type="text/javascript">
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", function() {
+                navigator.serviceWorker
+                .register("/serviceWorker.js")
+                .then(res => console.log("service worker registered"))
+                .catch(err => console.log("service worker not registered", err))
+            })
+        }
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-6143526-20"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-6143526-20');
+    </script>
+
 </html>
