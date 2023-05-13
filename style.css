@@ -25,7 +25,7 @@ p {
 }
 a {
 	text-decoration: underline;
-	color: #1889e6;
+	color: #0B3860;
 }
 a:hover {
 	text-decoration: none;
@@ -330,7 +330,7 @@ table, th, td {
 }
 .pcss3t .typography a {
 	text-decoration: underline;
-	color: #1889e6;
+	color: #0B3860;
 }
 .pcss3t .typography a:hover {
 	text-decoration: none;
@@ -348,7 +348,7 @@ table, th, td {
 }
 .pcss3t .typography .link {
 	text-decoration: underline;
-	color: #1889e6;
+	color: #0B3860;
 	cursor: pointer;
 }
 .pcss3t .typography .link:hover {
@@ -544,7 +544,7 @@ table, th, td {
 	padding-bottom: 5px;
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
-	color: #2b82d9;
+	color: #0B3860;
 	opacity: 1;
 }
 .pcss3t-theme-1 > ul {
