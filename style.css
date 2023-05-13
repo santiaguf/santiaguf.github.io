@@ -17,7 +17,7 @@ h1 {
 	font: 40px/60px Gabriela, Georgia, serif;
 	text-align: center;
 	text-shadow: 3px 3px rgba(0,0,0,0.1);
-	color: #fff;
+	color: #1F1F1F;
 }
 p {
 	margin-bottom: 40px;
@@ -54,7 +54,7 @@ table, th, td {
 	font: 20px/30px Gabriela, Georgia, serif;
 	text-align: center;
 	text-shadow: 3px 3px rgba(0,0,0,0.1);
-	color: #fff;
+	color: #1F1F1F;
 }
 
 /**/
