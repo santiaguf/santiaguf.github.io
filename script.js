@@ -43,8 +43,48 @@ const getMediumPosts = () => {
 
 document.getElementById('year').innerHTML = new Date().getFullYear();
 
-const tab6label = document.getElementById('tab6-label');
+const tab1label = document.getElementById('tab1');
+tab1label.addEventListener('click', () => {
+    const tabs = document.getElementById('tabs');
+    tabs.classList.remove(...tabs.classList);
+    tabs.classList.add('tab1');
+});
+
+const tab2label = document.getElementById('tab2');
+tab2label.addEventListener('click', () => {
+    const tabs = document.getElementById('tabs');
+    tabs.classList.remove(...tabs.classList);
+    tabs.classList.add('tab2');
+});
+
+const tab3label = document.getElementById('tab3');
+tab3label.addEventListener('click', () => {
+    const tabs = document.getElementById('tabs');
+    tabs.classList.remove(...tabs.classList);
+    tabs.classList.add('tab3');
+});
+
+const tab4label = document.getElementById('tab4');
+tab4label.addEventListener('click', () => {
+    const tabs = document.getElementById('tabs');
+    tabs.classList.remove(...tabs.classList);
+    tabs.classList.add('tab4');
+});
+
+const tab5label = document.getElementById('tab5');
+tab5label.addEventListener('click', () => {
+    const tabs = document.getElementById('tabs');
+    tabs.classList.remove(...tabs.classList);
+    tabs.classList.add('tab5');
+});
+
+const tab6label = document.getElementById('tab6');
 tab6label.addEventListener('click', () => {
+
+    const tabs = document.getElementById('tabs');
+    tabs.classList.remove(...tabs.classList);
+    tabs.classList.add('tab6');
+
     if(count == 0){
         getMediumPosts();
         count += 1;
