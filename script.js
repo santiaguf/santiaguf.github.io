@@ -25,7 +25,6 @@ const getMediumPosts = () => {
 
         let output = '';
         posts.forEach((item) => {
-            console.log(shortenText(toText(item.content), 0, 300));
             output += `
                     <div class="blog__content">
                         <div class="blog_preview">
