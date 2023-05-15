@@ -472,6 +472,38 @@ table, th, td {
 /*----------------------------------------------------------------------------*/
 
 /**/
+/* desktop */
+/**/
+
+@media screen and (min-width: 768px) {
+	.tab1 {
+		height: 520px;
+	}
+
+	.tab2 {
+		height: 230px;
+	}
+
+	.tab3 {
+		height: 730px;
+	}
+
+	.tab4 {
+		height: 330px;
+	}
+
+	.tab5 {
+		height: 830px;
+	}
+
+	.tab6 {
+		height: 720px;
+	}
+}
+
+
+
+/**/
 /* pad */
 /**/
 @media screen and (max-width: 980px) {
@@ -511,7 +543,7 @@ table, th, td {
 	}
 
 	.tab6 {
-		height: 1170px;
+		height: 1000px;
 	}
 
 }
@@ -780,26 +812,4 @@ table, th, td {
 	height: 370px;
 } */
 
-.tab1 {
-	height: 460px;
-}
 
-.tab2 {
-	height: 230px;
-}
-
-.tab3 {
-	height: 680px;
-}
-
-.tab4 {
-	height: 330px;
-}
-
-.tab5 {
-	height: 710px;
-}
-
-.tab6 {
-	height: 720px;
-}
