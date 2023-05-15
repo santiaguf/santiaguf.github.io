@@ -543,7 +543,7 @@ table, th, td {
 	}
 
 	.tab6 {
-		height: 1000px;
+		height: 1200px;
 	}
 
 }
@@ -813,3 +813,15 @@ table, th, td {
 } */
 
 
+.blog__content {
+	padding-top: 2em;
+	display: flex;
+}
+
+.blog__topImg {
+    width: 8em;
+}
+
+.post-image {
+    padding-top: 4em;
+}

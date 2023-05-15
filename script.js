@@ -25,17 +25,22 @@ const getMediumPosts = () => {
 
         let output = '';
         posts.forEach((item) => {
+            console.log(shortenText(toText(item.content), 0, 300));
             output += `
-                    <a href="${item.link}">
                     <div class="blog__content">
                         <div class="blog_preview">
-                            <h2 class="blog__title">${`${item.title} - ${shortenText(item.pubDate, 0, 10)}`}</h2>
-                            <img src="${item.thumbnail}" class="blog__topImg"></img>
-                            <p class="blog__intro">${`${shortenText(toText(item.content), 0, 300)}...`}</p>
+                            <a href="${item.link}">
+                                <h4 class="blog__title">${`${item.title}`}</h4>
+                            </a>
+                            <p class="blog__date">${shortenText(item.pubDate, 0, 10)}</p>
+                            <p class="blog__intro">${shortenText(toText(item.content), 0, 300)}...</p>
                         </div>
-                        <hr>
-                    </div>
-                    <a/>`;
+                        <div class="post-image">
+                            <a href="${item.link}">
+                                <img src="${item.thumbnail}" class="blog__topImg"></img>
+                            </a>
+                        </div>
+                    </div>`;
         });
         document.querySelector('.blog__slider').innerHTML = output;
     });
