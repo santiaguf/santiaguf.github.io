@@ -523,23 +523,23 @@ table, th, td {
 	}
 
 	.tab1 {
-		height: 670px;
+		height: 730px;
 	}
 
 	.tab2 {
-		height: 280px;
+		height: 300px;
 	}
 
 	.tab3 {
-		height: 1330px;
+		height: 1500px;
 	}
 
 	.tab4 {
-		height: 480px;
+		height: 580px;
 	}
 
 	.tab5 {
-		height: 1470px;
+		height: 1670px;
 	}
 
 	.tab6 {
@@ -820,8 +820,4 @@ table, th, td {
 
 .blog__topImg {
     width: 8em;
-}
-
-.post-image {
-    padding-top: 4em;
 }

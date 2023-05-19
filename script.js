@@ -34,11 +34,6 @@ const getMediumPosts = () => {
                             <p class="blog__date">${shortenText(item.pubDate, 0, 10)}</p>
                             <p class="blog__intro">${shortenText(toText(item.content), 0, 300)}...</p>
                         </div>
-                        <div class="post-image">
-                            <a href="${item.link}">
-                                <img src="${item.thumbnail}" class="blog__topImg"></img>
-                            </a>
-                        </div>
                     </div>`;
         });
         document.querySelector('.blog__slider').innerHTML = output;
